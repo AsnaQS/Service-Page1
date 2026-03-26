@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services | Quatrox Solutions</title>
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
+<link rel="shortcut icon" href="/favicon.png">
+<link rel="apple-touch-icon" href="/favicon.png">
+<meta name="description" content="Explore Quatrox Solutions services including ePub conversion, XML conversion, copy editing, accessibility, typesetting, and publishing technology solutions.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.quatroxsolutions.com/services/">
+<link rel="stylesheet" href="https://unpkg.com/geist-font@latest/style.css">
+<link rel="stylesheet" href="global.css">
+<link rel="stylesheet" href="service.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>emailjs.init("YOUR_PUBLIC_KEY");</script>
+
+<style>
+*{-webkit-tap-highlight-color:transparent!important;-webkit-touch-callout:none!important;outline:none!important}
+a,button,div,span{-webkit-tap-highlight-color:rgba(0,0,0,0)!important}
+
+/* ── SCROLL REVEAL ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+
+/* ── SERVICE BOX HOVER ENHANCEMENT ── */
+.service-box {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: default;
+}
+.service-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.09);
+}
+
+/* ── SECTION DIVIDER ── */
+.section-divider {
+  width: 48px;
+  height: 2px;
+  background: currentColor;
+  opacity: 0.15;
+  margin: 0 auto 12px auto;
+}
+
+/* ── PROJECTS SECTION ── */
+.projects-section {
+  padding: 80px 40px;
+  border-top: 1px solid rgba(0,0,0,0.08);
+  background: #0D0D29;
+  color: #ffffff;
+}
+
+.projects-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.projects-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.projects-label {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 10px;
+}
+
+.projects-title {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0;
+  color: #ffffff;
+}
+
+.projects-count {
+  font-size: 64px;
+  font-weight: 800;
+  color: rgba(255,255,255,0.06);
+  font-family: Georgia, serif;
+  letter-spacing: -3px;
+  line-height: 1;
+  user-select: none;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.project-card {
+  padding: 40px 36px;
+  border-right: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  position: relative;
+  transition: background 0.2s ease;
+  overflow: hidden;
+}
+
+.project-card:nth-child(2n) {
+  border-right: none;
+}
+
+.project-card:nth-child(3),
+.project-card:nth-child(4) {
+  border-bottom: none;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 3px;
+  height: 0;
+  background: #fff;
+  opacity: 0.25;
+  transition: height 0.3s ease;
+}
+
+.project-card:hover::before {
+  height: 100%;
+}
+
+.project-card:hover {
+  background: rgba(255,255,255,0.04);
+}
+
+.project-number {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  margin-bottom: 20px;
+  font-family: Georgia, serif;
+}
+
+.project-service-tag {
+  display: inline-block;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 2px;
+  margin-bottom: 16px;
+  color: rgba(255,255,255,0.5);
+}
+
+.project-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 14px 0;
+  line-height: 1.25;
+  color: #ffffff;
+}
+
+.project-desc {
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.55);
+  margin: 0;
+}
+
+/* ── CTA BANNER ── */
+.cta-banner {
+  padding: 64px 40px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  text-align: center;
+  background: #0D0D29;
+}
+
+.cta-inner {
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.cta-label {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 16px;
+}
+
+.cta-heading {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 12px 0;
+  color: #ffffff;
+}
+
+.cta-sub {
+  font-size: 14px;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.7;
+  margin: 0 0 32px 0;
+}
+
+.cta-btn {
+  display: inline-block;
+  padding: 14px 36px;
+  background: #ffffff;
+  color: #0D0D29;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  transition: opacity 0.2s, transform 0.1s;
+}
+.cta-btn:hover { opacity: 0.88; }
+.cta-btn:active { transform: scale(0.98); }
+
+/* ── CONTACT FORM ── */
+.contact-section{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid rgba(0,0,0,0.1)}
+.contact-left{padding:64px 56px;display:flex;flex-direction:column;justify-content:space-between}
+.contact-meta{display:flex;justify-content:space-between;font-size:11px;letter-spacing:.08em;text-transform:uppercase;opacity:.5;margin-bottom:40px}
+.contact-big-letter{font-size:110px;font-weight:800;line-height:1;font-family:Georgia,serif;margin-bottom:4px;letter-spacing:-4px}
+.contact-eyebrow{font-size:11px;letter-spacing:.12em;text-transform:uppercase;opacity:.5;margin-bottom:14px}
+.contact-headline{font-size:36px;font-weight:700;line-height:1.15;margin:0 0 18px 0}
+.contact-desc{font-size:14px;line-height:1.7;max-width:320px;opacity:.65;margin-bottom:48px}
+.contact-info-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px 16px;border-top:1px solid rgba(0,0,0,0.12);padding-top:28px}
+.contact-info-item .ci-label{font-size:10px;letter-spacing:.1em;text-transform:uppercase;opacity:.45;margin-bottom:4px}
+.contact-info-item .ci-value{font-size:13px;font-weight:500}
+.contact-right{padding:64px 56px;display:flex;flex-direction:column;justify-content:center;background:#ffffff;border-left:1px solid rgba(0,0,0,0.08)}
+.contact-right h3{font-size:16px;font-weight:600;margin:0 0 32px 0}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:0 24px}
+.form-field{margin-bottom:24px}
+.form-field label{display:block;font-size:10px;letter-spacing:.1em;text-transform:uppercase;opacity:.5;margin-bottom:8px}
+.form-field input,.form-field textarea{width:100%;border:none;border-bottom:1px solid rgba(0,0,0,0.18);background:transparent;font-size:14px;padding:6px 0 10px 0;font-family:inherit;color:inherit;transition:border-color .2s;box-sizing:border-box}
+.form-field input::placeholder,.form-field textarea::placeholder{opacity:.35;color:inherit}
+.form-field input:focus,.form-field textarea:focus{border-bottom-color:currentColor}
+.form-field textarea{resize:none;height:80px}
+.form-footer{display:flex;align-items:center;justify-content:space-between;margin-top:8px}
+.form-footer .no-spam{font-size:12px;opacity:.35}
+.send-btn{padding:13px 28px;font-size:13px;font-weight:600;letter-spacing:.05em;cursor:pointer;font-family:inherit;border:none;background:#1a1a2e;color:#ffffff;transition:opacity .2s,transform .1s}
+.send-btn:hover{opacity:.82}.send-btn:active{transform:scale(0.98)}.send-btn:disabled{opacity:.5;cursor:not-allowed}
+.form-success{display:none;text-align:center;padding:48px 0}
+.form-success .success-check{font-size:36px;margin-bottom:14px}
+.form-success .success-title{font-size:15px;font-weight:600;margin-bottom:6px}
+.form-success .success-sub{font-size:13px;opacity:.5}
+
+/* ── RESPONSIVE ── */
+@media(max-width:860px){
+  .contact-section{grid-template-columns:1fr}
+  .contact-left,.contact-right{padding:48px 28px}
+  .contact-big-letter{font-size:72px}
+  .contact-headline{font-size:26px}
+  .form-row{grid-template-columns:1fr}
+  .contact-right{border-left:none;border-top:1px solid rgba(0,0,0,0.08)}
+  .projects-grid{grid-template-columns:1fr}
+  .project-card:nth-child(n){border-right:none;border-bottom:1px solid rgba(255,255,255,0.08)}
+  .project-card:last-child{border-bottom:none}
+  .projects-section{padding:60px 24px}
+  .cta-banner{padding:48px 24px}
+  .projects-title{font-size:24px}
+}
+</style>
+</head>
+<body>
+
+  <!-- NAVIGATION BAR -->
+  <nav class="nav-bar">
+    <div class="nav-content">
+      <img src="Logo.png" alt="Quatrox Solutions logo" class="logo" />
+      <div class="menu desktop-menu">
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="service.html">Services</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+      <div class="hamburger" id="hamburgerBtn">&#9776;</div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="service.html">Services</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+  </nav>
+
+  <!-- SERVICE IMAGE SECTION -->
+  <div class="service-image">
+    <img src="service home.png" alt="Quatrox Solutions digital publishing services">
+  </div>
+
+  <!-- OUR SERVICES SECTION -->
+  <section class="our-services-section">
+    <div class="services-container">
+      <h2 class="services-heading reveal">Navigating complex data challenges? <br />We Can Help.</h2>
+      <div class="services-list">
+        <div class="service-box reveal reveal-delay-1">
+          <h3>EPUB CONVERSION</h3>
+          <p>The concept of electronic book (e-Book) is enhancing the reading habits of people worldwide. E-Book publishing is the next evolution in digital publishing.</p>
+        </div>
+        <div class="service-box reveal reveal-delay-2">
+          <h3>XML CONVERSION</h3>
+          <p>XML is one of the EPUB modes to offer publishers through defining the structure of the eBook, specifying exact metadata, managing navigability and controlled presentation in Open Packaging Format.</p>
+        </div>
+        <div class="service-box reveal reveal-delay-3">
+          <h3>COPY EDITING</h3>
+          <p>Our copyediting process ensures every document is accurate, consistent, and ready for publication. We focus on enhancing clarity and readability while maintaining the author's intent.</p>
+        </div>
+        <div class="service-box reveal reveal-delay-4">
+          <h3>ACCESSIBILITY SERVICES</h3>
+          <p>We offer cost-efficient and high-quality ADA-compliant solution sets. Our WCAG guidelines-based tagging services are automated for Section 508 and ADA compliance, suitable for multiple countries.</p>
+        </div>
+        <div class="service-box reveal reveal-delay-5">
+          <h3>TYPESETTING</h3>
+          <p>Typesetting involves formatting and arrangement of content to make it visually presentable and appealing — including adjustments, line spacing, graphics positioning, and table placements.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE BANNER IMAGE SECTION -->
+  <section class="service-banner">
+    <img src="service footer.png" alt="Quatrox Solutions publishing technology banner" />
+  </section>
+
+  <!-- ── PROJECTS SECTION ── -->
+  <section class="projects-section" id="projects">
+    <div class="projects-inner">
+
+      <div class="projects-header reveal">
+        <div>
+          <div class="projects-label">Our work</div>
+          <h2 class="projects-title">Projects We've<br>Delivered</h2>
+        </div>
+        <div class="projects-count">04</div>
+      </div>
+
+      <div class="projects-grid">
+
+        <div class="project-card reveal reveal-delay-1">
+          <div class="project-number">01</div>
+          <span class="project-service-tag">Document Conversion</span>
+          <h3 class="project-title">PDF to Word Conversion</h3>
+          <p class="project-desc">Accurately converted large volumes of PDF documents into fully editable Microsoft Word files, preserving original formatting, tables, fonts, and layout structure for seamless client use.</p>
+        </div>
+
+        <div class="project-card reveal reveal-delay-2">
+          <div class="project-number">02</div>
+          <span class="project-service-tag">Data Extraction</span>
+          <h3 class="project-title">Picture Document to Excel</h3>
+          <p class="project-desc">Extracted structured data from scanned image-based documents and handwritten records into clean, well-formatted Microsoft Excel spreadsheets, ready for analysis and reporting.</p>
+        </div>
+
+        <div class="project-card reveal reveal-delay-3">
+          <div class="project-number">03</div>
+          <span class="project-service-tag">Media Localisation</span>
+          <h3 class="project-title">SRT Translation</h3>
+          <p class="project-desc">Translated subtitle files (SRT format) across multiple languages with precision, maintaining accurate timing synchronisation, natural phrasing, and cultural relevance for global audiences.</p>
+        </div>
+
+        <div class="project-card reveal reveal-delay-4">
+          <div class="project-number">04</div>
+          <span class="project-service-tag">Media Services</span>
+          <h3 class="project-title">SRT Transcription</h3>
+          <p class="project-desc">Transcribed audio and video content into timestamped SRT subtitle files with high accuracy, supporting accessibility requirements, content localisation, and searchable media archives.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA BANNER ── -->
+  <section class="cta-banner reveal">
+    <div class="cta-inner">
+      <div class="cta-label">Ready to start?</div>
+      <h2 class="cta-heading">Have a project in mind?<br>Let's talk.</h2>
+      <p class="cta-sub">From a single document to a full catalogue — our team is ready to help you deliver faster, cleaner, and more accessibly.</p>
+      <a href="#contact-form" class="cta-btn">Get in Touch &rarr;</a>
+    </div>
+  </section>
+
+  <!-- ── CONTACT FORM SECTION ── -->
+  <section class="contact-section" id="contact-form">
+    <div class="contact-left">
+      <div>
+        <div class="contact-meta"><span>Est. 2020</span><span>Tamil Nadu, India</span></div>
+        <div class="contact-big-letter">G</div>
+        <div class="contact-eyebrow">Get in touch</div>
+        <h2 class="contact-headline">We'd love to<br>hear from you</h2>
+        <p class="contact-desc">Have a project in mind? Drop us a message and our team will respond within 24 hours. From idea to execution, we're your end-to-end publishing technology partner.</p>
+      </div>
+      <div class="contact-info-grid">
+        <div class="contact-info-item">
+          <div class="ci-label">Email</div>
+          <div class="ci-value">Contact@quatroxsolutions.com</div>
+        </div>
+        <div class="contact-info-item">
+          <div class="ci-label">Phone</div>
+          <div class="ci-value">+91 72008 01765</div>
+        </div>
+        <div class="contact-info-item">
+          <div class="ci-label">Thuckalay Office</div>
+          <div class="ci-value">Thuckalay, TN 629175</div>
+        </div>
+        <div class="contact-info-item">
+          <div class="ci-label">Madurai Office</div>
+          <div class="ci-value">Madurai, TN 625006</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-right">
+      <h3>Send a message</h3>
+      <form id="contactForm" novalidate>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="cf-name">Name</label>
+            <input type="text" id="cf-name" name="name" placeholder="Your name" required>
+          </div>
+          <div class="form-field">
+            <label for="cf-email">Email</label>
+            <input type="email" id="cf-email" name="email" placeholder="you@company.com" required>
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="cf-phone">Phone</label>
+          <input type="tel" id="cf-phone" name="phone" placeholder="+91 XXXXX XXXXX">
+        </div>
+        <div class="form-field">
+          <label for="cf-subject">Subject</label>
+          <input type="text" id="cf-subject" name="subject" placeholder="What can we help with?">
+        </div>
+        <div class="form-field">
+          <label for="cf-message">Message</label>
+          <textarea id="cf-message" name="message" placeholder="Tell us about your project..." required></textarea>
+        </div>
+        <div class="form-footer">
+          <span class="no-spam">No spam, ever.</span>
+          <button type="submit" class="send-btn">SEND &rarr;</button>
+        </div>
+      </form>
+      <div class="form-success" id="formSuccess">
+        <div class="success-check">&#10003;</div>
+        <p class="success-title">Message sent!</p>
+        <p class="success-sub">We'll get back to you within 24 hours.</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+  var EMAILJS_SERVICE_ID  = "service_qoouqes";
+  var EMAILJS_TEMPLATE_ID = "template_k6owjpy";
+
+  document.addEventListener("DOMContentLoaded", function () {
+
+    // ── MOBILE NAV ──
+    var mobileMenu = document.getElementById("mobileMenu");
+    var hamburger  = document.getElementById("hamburgerBtn");
+    mobileMenu.style.display = "none";
+
+    hamburger.addEventListener("click", function(e) {
+      e.stopPropagation();
+      mobileMenu.style.display = mobileMenu.style.display === "flex" ? "none" : "flex";
+    });
+    document.querySelectorAll(".mobile-menu a").forEach(function(link) {
+      link.addEventListener("click", function() { mobileMenu.style.display = "none"; });
+    });
+    document.addEventListener("click", function(e) {
+      if (mobileMenu.style.display === "flex" && !mobileMenu.contains(e.target) && !hamburger.contains(e.target)) {
+        mobileMenu.style.display = "none";
+      }
+    });
+
+    // ── NAVBAR HIDE ON SCROLL ──
+    var navbar = document.querySelector(".nav-bar");
+    var lastScroll = 0, ticking = false;
+    window.addEventListener("scroll", function() {
+      if (!ticking) {
+        requestAnimationFrame(function() {
+          var cs = window.pageYOffset;
+          mobileMenu.style.display = "none";
+          navbar.style.transform = (cs > lastScroll && cs > 80) ? "translateY(-100%)" : "translateY(0)";
+          lastScroll = cs;
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+
+    // ── SCROLL REVEAL ──
+    var revealEls = document.querySelectorAll(".reveal");
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(function(el) { observer.observe(el); });
+
+    // ── SMOOTH SCROLL FOR CTA BUTTON ──
+    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+      anchor.addEventListener("click", function(e) {
+        var target = document.querySelector(this.getAttribute("href"));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      });
+    });
+
+    // ── EMAILJS FORM ──
+    var form       = document.getElementById("contactForm");
+    var successMsg = document.getElementById("formSuccess");
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+      var name    = document.getElementById("cf-name").value.trim();
+      var email   = document.getElementById("cf-email").value.trim();
+      var message = document.getElementById("cf-message").value.trim();
+      if (!name || !email || !message) {
+        alert("Please fill in your name, email, and message.");
+        return;
+      }
+      var btn = form.querySelector(".send-btn");
+      btn.textContent = "Sending...";
+      btn.disabled    = true;
+
+      emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+        name:    name,
+        email:   email,
+        phone:   document.getElementById("cf-phone").value.trim(),
+        subject: document.getElementById("cf-subject").value.trim(),
+        message: message
+      })
+      .then(function() {
+        form.style.display       = "none";
+        successMsg.style.display = "block";
+      })
+      .catch(function(err) {
+        console.error("EmailJS error:", err);
+        btn.textContent = "SEND \u2192";
+        btn.disabled    = false;
+        alert("Something went wrong. Please email us at Contact@quatroxsolutions.com");
+      });
+    });
+
+  });
+  </script>
+
+</body>
+
+<footer class="footer-section">
+  <div class="footer-container">
+    <div class="footer-header">
+      <img src="Logo.png" alt="Quatrox Solutions logo" class="footer-logo">
+      <p class="footer-title">QUATROX SOLUTIONS PRIVATE LIMITED</p>
+    </div>
+    <div class="footer-subhead">
+      <p>To be a trusted partner in delivering exceptional, fast, and reliable customer</p>
+      <p>services to organizations of all sizes - from startups to global enterprises.</p>
+    </div>
+    <div class="footer-columns">
+      <div class="footer-col">
+        <a href="mailto:Contact@quatroxsolutions.com?subject=Enquiry%20from%20Website&body=Hello%20Quatrox%20Solutions%2C%0A%0AI%20would%20like%20to%20enquire%20about%20your%20services." style="color:#000;text-decoration:none;display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/></svg>
+          Contact@quatroxsolutions.com
+        </a>
+        <a href="tel:+917200801765" style="color:#000;text-decoration:none;display:flex;align-items:center;gap:8px;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58z"/></svg>
+          +91 7200801765
+        </a>
+      </div>
+      <div class="footer-col">
+        <a href="https://maps.google.com/?q=16-74A+HMP+Towers+Market+Rd+Thuckalay+Tamil+Nadu+629175" target="_blank" style="color:#000;text-decoration:none;display:block;line-height:1.8;">
+          &#128205; 16-74A, HMP Towers Market Rd,<br>Thuckalay, Tamilnadu - 629175
+        </a>
+      </div>
+      <div class="footer-col">
+        <a href="https://maps.google.com/?q=Meenakshi+Street+Thirunagar+Madurai+Tamil+Nadu+625006" target="_blank" style="color:#000;text-decoration:none;display:block;line-height:1.8;">
+          &#128205; 66 5-5/9 Meenakshi street,<br>Thirunagar, Madurai - 625006
+        </a>
+      </div>
+      <div class="footer-col footer-links">
+        <a href="https://www.instagram.com/quatrox_solutions?igsh=MWl2MjAwa3Z4ZmFoag==" target="_blank" style="display:flex;align-items:center;gap:8px;color:#000;text-decoration:none;margin-bottom:10px;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm.003 1.44c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/></svg>
+          Instagram
+        </a>
+        <a href="https://www.linkedin.com/in/quatrox-data-solutions-a29792378" target="_blank" style="display:flex;align-items:center;gap:8px;color:#000;text-decoration:none;margin-bottom:10px;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://wa.me/917200801765" target="_blank" style="display:flex;align-items:center;gap:8px;color:#000;text-decoration:none;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/></svg>
+          Whatsapp
+        </a>
+      </div>
+    </div>
+    <div class="footer-map">
+      <iframe src="https://maps.google.com/maps?q=Tamil+Nadu,India&output=embed&z=7" width="100%" height="250" style="border:0;border-radius:12px;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <div style="display:flex;gap:20px;margin-top:10px;flex-wrap:wrap;">
+        <a href="https://maps.google.com/?q=16-74A+HMP+Towers+Market+Rd+Thuckalay+Tamil+Nadu+629175" target="_blank" style="color:#000;font-size:13px;text-decoration:underline;">&#128205; View Thuckalay Office</a>
+        <a href="https://maps.google.com/?q=Meenakshi+Street+Thirunagar+Madurai+Tamil+Nadu+625006" target="_blank" style="color:#000;font-size:13px;text-decoration:underline;">&#128205; View Madurai Office</a>
+      </div>
+    </div>
+    <div class="footer-copy">
+      <p>Quatrox Solutions Pvt Ltd &copy; 2025 All Rights Reserved</p>
+    </div>
+  </div>
+</footer>
+
+</html>
